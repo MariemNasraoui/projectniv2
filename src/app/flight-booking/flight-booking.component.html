@@ -1,3 +1,51 @@
-<p>
-  flight-booking works!
-</p>
+<div>
+    <div class="fh5co-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-5">
+          <div class="container body">
+            <div *ngIf="offers">
+              <div *ngFor="let index of offers">
+                <div class="row cover">
+                  <div *ngFor="let offer of index.offerItems ">
+                    <div *ngFor="let service of offer.services ">
+                      <div style="margin-top:50px !important;">
+                      <div *ngFor="let segment of service.segments ; index as i" >
+                        <div class="row ">
+                            <div class="col-md-12 resultat  ">
+                              
+                          <div class="col-md-4 resultat boxFrom " >
+                            <p class="resultat"> From : {{segment.flightSegment.departure.iataCode}}</p>
+                            <p class="resultat"> Terminal Departure : {{segment.flightSegment.departure.terminal}}</p>
+                            <p class="resultat"> Departure Time : {{segment.flightSegment.departure.at}}</p>
+                          </div>
+                            <div class="col-md-4 resultat boxTo" >
+                                <p class="resultat"> To : {{segment.flightSegment.arrival.iataCode}}</p>
+                                <p class="resultat"> Terminal Arrival : {{segment.flightSegment.arrival.terminal}}</p>
+                                <p class="resultat"> Arrival Time : {{segment.flightSegment.arrival.at}}</p>
+                            </div>    
+                            <div class="col-md-4 resultat boxPrice " >
+                              <p class="resultat"> Total price : {{offer.price.total}}</p>
+                              <button (click)="show(i)">more details</button>
+                              <div id="{{i}}" style="display:none">
+                              <p class="resultat"> PricePerAdult : {{offer.pricePerAdult.total}}</p>
+                              <p class="resultat"> pricePerChild : {{offer.pricePerChild.total}}</p>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                   
+                    </div>
+                    <button class="btn btn-primary" (click)="gotobooknow()">Book Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

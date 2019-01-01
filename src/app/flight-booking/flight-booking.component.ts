@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightService } from '../flight.service';
+
 
 @Component({
   selector: 'app-flight-booking',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flight-booking.component.css']
 })
 export class FlightBookingComponent implements OnInit {
-
-  constructor() { }
+ 
+  offers:any;
+  constructor( private ApiServce:FlightService) { }
 
   ngOnInit() {
+    this.offers=  this.ApiServce.results;
   }
+  
 
 }
