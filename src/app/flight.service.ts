@@ -32,7 +32,7 @@ export class FlightService {
 
     var headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .append('Authorization', 'Bearer ' + 'wW7eBeAW9ROA9kHAd61gvXCo2thl');
+      .append('Authorization', 'Bearer ' + this.tken);
 
     return this.http.get('https://test.api.amadeus.com/v1/shopping/flight-offers?origin=' + depart + '&destination=' + arrive + '&departureDate=' + dateAller + '&returnDate=' + dateRetour + '&travelClass=' + travelClass + '&adults=' + adult + '&children=' + children + '&max=3', { headers })
 
