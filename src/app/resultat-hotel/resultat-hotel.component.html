@@ -1,3 +1,98 @@
-<p>
-  resultat-hotel works!
-</p>
+<div id="fh5co-wrapper">
+  <div id="fh5co-page">
+
+    <header id="fh5co-header-section" class="sticky-banner">
+      <div class="container">
+        <div class="nav-header">
+          <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+          <h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
+          <!-- START #fh5co-menu-wrap -->
+          <nav id="fh5co-menu-wrap" role="navigation">
+            <ul class="sf-menu" id="fh5co-primary-menu">
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
+                <ul class="fh5co-sub-menu">
+                  <li><a href="#">Family</a></li>
+                  <li><a href="#">CSS3 &amp; HTML5</a></li>
+                  <li><a href="#">Angular JS</a></li>
+                  <li><a href="#">Node JS</a></li>
+                  <li><a href="#">Django &amp; Python</a></li>
+                </ul>
+              </li>
+              <li><a href="flight.html">Flights</a></li>
+              <li class="active"><a href="hotel.html">Hotel</a></li>
+              <li><a href="car.html">Car</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- end:header-top -->
+
+
+
+    <div class="container">
+      <div class="row stylet">
+        <div class="col-sm">
+          <div *ngFor="let index of offer">
+            <div *ngFor="let info of index.offers">
+              <div *ngFor="let date of info.price.variations.changes">
+                <br>
+                <img src="https://www.freeiconspng.com/uploads/calendar-image-png-3.png" width="40px" height="30px">
+                <b>Check In: </b>{{date.startDate}}
+                <img src="https://www.freeiconspng.com/uploads/calendar-image-png-3.png" width="40px" height="30px">
+                <b>Check Out: </b>{{date.endDate}}
+              </div>
+            </div>
+          </div>
+          <br>
+          <div *ngFor="let index of offer">
+
+            <p><b>Hotel NAME: </b>{{index.hotel.name}}</p>
+            <div class="row" style="margin: 25px">
+              <div class="col-sm">
+                <img src="https://www.stickers-73.com/1295-thickbox_default/etoile-americaine.jpg" width="40px" height="30px"><b>Rating:
+                </b>{{index.hotel.rating}}
+
+                <img src="https://cdn3.iconfinder.com/data/icons/camping-flat-colorful/614/2702_-_Distance-512.png"
+                  width="40px" height="30px"><b>Distance:</b>{{index.hotel.hotelDistance.distance}}{{index.hotel.hotelDistance.distanceUnit}}
+
+
+                <img src="https://banner2.kisspng.com/20180329/uiq/kisspng-beer-power-outage-symbol-computer-icons-location-5abc97abd4f9a2.4170354215223090358724.jpg"
+                  width="30px" height="30px"> <b>City Name:</b>{{index.hotel.address.cityName}}
+                <b>Country Code: </b>{{index.hotel.address.countryCode}}
+              </div>
+            </div>
+            <div class="row" style="margin: 25px">
+              <div class="col-sm" style="margin-top: 25px">
+                <img src="https://banner2.kisspng.com/20180329/lie/kisspng-computer-icons-logo-telephone-5abd1a24f40b22.5241594315223424369996.jpg"
+                  width="30px" height="30px">
+                <b>Phone: </b>{{index.hotel.contact.phone}}
+
+                <img src="https://www.freeiconspng.com/uploads/fax-icon-png-9.png" width="40px" height="30px"> <b>Fax:</b>{{index.hotel.contact.fax}}
+              </div>
+            </div>
+            <div *ngFor="let info of index.offers">
+              <div class="row" style="margin: 25px">
+                <div class="col-sm" style="margin-top: 25px">
+                  <img src="https://banner2.kisspng.com/20180715/zs/kisspng-person-logo-royalty-free-people-travel-5b4bde06c63661.9701405315316986948119.jpg"
+                    width="40px" height="30px">
+                  <b>Adults: </b>{{info.guests.adults}}
+
+                  <img src="https://carwad.net/sites/default/files/money-symbol-111402-915193.png" width="40px" height="30px">
+                  <b>Total: </b>{{info.price.total}} {{info.price.currency}}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <button class="button" (click)="gotoform()"><span>RESERVE</span></button>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>

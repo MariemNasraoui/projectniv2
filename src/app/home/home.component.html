@@ -134,7 +134,90 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    <div role="tabpanel" class="tab-pane " id="hotels">
+                                        <div class="row">
+                                            <div class="col-xxs-12 col-xs-12 mt">
+                                                <div class="input-field">
+                                                    <label for="from">City:</label>
+                                                    <input type="text" class="form-control" id="from-place"
+                                                        placeholder="CHOOSE YOUR DESTINATION" [(ngModel)]="villeh">
+                                                </div>
+                                            </div>
+                                            <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                <div class="input-field">
+                                                    <label for="date-start">Check In:</label>
+                                                    <input type="date" class="form-control" id="date-start"
+                                                        placeholder="dd/mm/yyyy" [(ngModel)]="checkin">
+                                                </div>
+                                            </div>
+                                            <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                <div class="input-field">
+                                                    <label for="date-end">Check Out:</label>
+                                                    <input type="date" class="form-control" id="date-end"
+                                                        placeholder="dd/mm/yyyy" [(ngModel)]="checkout">
+                                                </div>
+                                            </div>
+                                            <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                <section>
+                                                    <label for="class">Rating:</label>
 
+                                                    <div class="input-group mb-3 size" style="color:#F78536">
+                                                        <select class="custom-select" id="inputGroupSelect02" style="padding: 5px 15px;background-color: #efe8e8"
+                                                            [(ngModel)]=" rate">
+                                                            <option selected>Choose...</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="4">5</option>
+                                                        </select>
+
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                <section>
+                                                    <label for="class">Rooms:</label>
+
+                                                    <div class="input-group mb-3 size" style="color:#F78536">
+                                                        <select class="custom-select" id="inputGroupSelect02" style="padding: 5px 15px;background-color: #efe8e8"
+                                                            [(ngModel)]="room">
+                                                            <option selected>Choose...</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                        </select>
+
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div class="col-xxs-12 col-xs-6 mt">
+                                                <section>
+                                                    <label for="class">Guest:</label>
+
+                                                    <div class="input-group mb-3 size" style="color:#F78536">
+                                                        <select class="custom-select " id="inputGroupSelect02"
+                                                            style="padding: 5px 15px;background-color: #efe8e8"
+                                                            [(ngModel)]="adulte">
+                                                            <option selected>Choose...</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                        </select>
+
+                                                    </div>
+                                                </section>
+                                            </div>
+
+                                            <div class="col-xs-12">
+                                                <input type="submit" class="btn btn-primary btn-block" value="Search Hotel"
+                                                    (click)=" getthehotel()">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div role="tabpanel" class="tab-pane" id="packages">
                                         <div class="row">

@@ -20,7 +20,16 @@ export class HomeComponent implements OnInit {
   adult:any;
   dictionaries: any;
   children: any;
-  constructor( private ApiServce:FlightService , private router:Router) { }
+  ville: string;
+  period: string;
+  villeh: string;
+  checkin: string;
+  checkout: string;
+  adulte: string;
+  room: string;
+  rate: string;
+  result: any;
+  constructor( private ApiServce:FlightService, private apiService:FlightService , private router:Router) { }
 
   ngOnInit() {
   }
@@ -35,5 +44,16 @@ export class HomeComponent implements OnInit {
    this.types=this.results.offerItems;
    this.router.navigate(['/flight']);
   })
+  }
+  getthehotel() {
+
+    this.apiService.getApiHotel(this.villeh,this.checkin,this.checkout,this.adulte,this.room,this.rate).subscribe(doc => {
+      console.log(doc.data);
+      this.result = doc.data;
+      this.apiService.result=this.result;
+      this.router.navigate(['/hotel']);
+
+    });
+
   }
 }
