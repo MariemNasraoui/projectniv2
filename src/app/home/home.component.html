@@ -59,7 +59,7 @@
                                             <div class="col-xxs-12 col-xs-6 mt">
                                                 <div class="input-field">
                                                     <label for="from">From:</label>
-                                                    <select [(ngModel)]="depart" class="button">
+                                                    <select [(ngModel)]="depart" class="button" class="select">
                                                         <option value="PAR">Paris</option>
                                                         <option value="TUN">Tunis</option>
                                                         <option value="NYC">New York</option>
@@ -72,7 +72,7 @@
                                             <div class="col-xxs-12 col-xs-6 mt">
                                                 <div class="input-field">
                                                     <label for="from">To:</label>
-                                                    <select [(ngModel)]="arrive" class="button">
+                                                    <select [(ngModel)]="arrive" class="select">
                                                         <option value="PAR">Paris</option>
                                                         <option value="TUN">Tunis</option>
                                                         <option value="NYC">New York</option>
@@ -97,7 +97,7 @@
                                             <div class="col-sm-12 mt">
                                                 <section>
                                                     <label for="class">Travel Class:</label>
-                                                    <select [(ngModel)]="travelClass" class="button">
+                                                    <select [(ngModel)]="travelClass" class="select">
                                                         <option value="ECONOMY">Economy</option>
                                                         <option value="PREMIUM_ECONOMY">Premium Economy</option>
                                                         <option value="FIRST">First</option>
@@ -108,8 +108,8 @@
                                             <div class="col-xxs-12 col-xs-6 mt">
                                                 <section>
                                                     <label for="class">Adult:</label>
-                                                    <select [(ngModel)]="adult" class="button">
-                                                        <option value="" disabled selected>1</option>
+                                                    <select [(ngModel)]="adult" class="select">
+                                                        <option value="0" disabled selected>1</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -120,8 +120,8 @@
                                             <div class="col-xxs-12 col-xs-6 mt">
                                                 <section>
                                                     <label for="class">Children:</label>
-                                                    <select [(ngModel)]="children" class="button">
-                                                        <option value="" disabled selected>1</option>
+                                                    <select [(ngModel)]="children" class="select">
+                                                        <option value="0" disabled selected>1</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>

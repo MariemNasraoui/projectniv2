@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightService } from '../flight.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,11 +11,13 @@ import { FlightService } from '../flight.service';
 export class FlightBookingComponent implements OnInit {
  
   offers:any;
-  constructor( private ApiServce:FlightService) { }
+  constructor( private ApiServce:FlightService,  private router:Router) { }
 
   ngOnInit() {
     this.offers=  this.ApiServce.results;
   }
   
-
+  gotobooknow(){
+    this.router.navigate(['/flightForm']);
+  }
 }

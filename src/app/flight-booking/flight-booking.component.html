@@ -1,51 +1,99 @@
-<div>
-    <div class="fh5co-overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 col-md-5">
-          <div class="container body">
-            <div *ngIf="offers">
-              <div *ngFor="let index of offers">
-                <div class="row cover">
-                  <div *ngFor="let offer of index.offerItems ">
-                    <div *ngFor="let service of offer.services ">
-                      <div style="margin-top:50px !important;">
-                      <div *ngFor="let segment of service.segments ; index as i" >
-                        <div class="row ">
-                            <div class="col-md-12 resultat  ">
-                              
-                          <div class="col-md-4 resultat boxFrom " >
-                            <p class="resultat"> From : {{segment.flightSegment.departure.iataCode}}</p>
-                            <p class="resultat"> Terminal Departure : {{segment.flightSegment.departure.terminal}}</p>
-                            <p class="resultat"> Departure Time : {{segment.flightSegment.departure.at}}</p>
-                          </div>
-                            <div class="col-md-4 resultat boxTo" >
-                                <p class="resultat"> To : {{segment.flightSegment.arrival.iataCode}}</p>
-                                <p class="resultat"> Terminal Arrival : {{segment.flightSegment.arrival.terminal}}</p>
-                                <p class="resultat"> Arrival Time : {{segment.flightSegment.arrival.at}}</p>
-                            </div>    
-                            <div class="col-md-4 resultat boxPrice " >
-                              <p class="resultat"> Total price : {{offer.price.total}}</p>
-                              <button (click)="show(i)">more details</button>
-                              <div id="{{i}}" style="display:none">
-                              <p class="resultat"> PricePerAdult : {{offer.pricePerAdult.total}}</p>
-                              <p class="resultat"> pricePerChild : {{offer.pricePerChild.total}}</p>
-                            </div>
-                            </div>
-                          </div>
+<div id="fh5co-wrapper" > 
+  <header id="fh5co-header-section" class="sticky-banner">
+      <div>
+        <div class="nav-header">
+          <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+          <h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
+          <!-- START #fh5co-menu-wrap -->
+          <nav id="fh5co-menu-wrap" role="navigation">
+            <ul class="sf-menu" id="fh5co-primary-menu">
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="vacation.html" class="fh5co-sub-ddown">Vacations</a>
+                <ul class="fh5co-sub-menu">
+                  <li><a href="#">Family</a></li>
+                  <li><a href="#">CSS3 &amp; HTML5</a></li>
+                  <li><a href="#">Angular JS</a></li>
+                  <li><a href="#">Node JS</a></li>
+                  <li><a href="#">Django &amp; Python</a></li>
+                </ul>
+              </li>
+              <li class="active"><a href="flight.html">Flights</a></li>
+              <li><a routerLink="/login">LogIn</a></li>
+              <li><a href="car.html">Car</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+       </header>
+  
+<div id="fh5co-page" style="background-color: grey">
+  <div class="container">
+    <div *ngIf="offers" class="col-md-12">
+      <div *ngFor="let index of offers">
+        <p>{{adult}}</p>
+        <div *ngFor="let offer of index.offerItems ">
+          <div *ngFor="let service of offer.services ">
+            <div *ngFor="let segment of service.segments ">
+              <div class="container-fluide">
+                <div class="row" style="margin-top: 71px;">
+                  <div>
+                    <article class="card fl-left">
+                      <section class="date">
+                        <time>
+                          <span>{{offer.price.total}}</span><span>Total price/<small>duty free</small></span>
+                        </time>
+                      </section>
+                      <section class="row card-cont">
+                        <div class="col">
+                        <small>From</small>
+                        <h3>{{segment.flightSegment.departure.iataCode}}</h3>
+                        <div class="even-date">
+                          <i class="fa fa-calendar"></i>
+                          <time>
+                            <span>Terminal : {{segment.flightSegment.departure.terminal}}</span>
+                            <span>{{segment.flightSegment.departure.at}}</span>
+                            <span>carrierCode : {{segment.flightSegment.carrierCode}}</span>
+                            <span>Duration : {{segment.flightSegment.duration}}</span>
+                            <span>TravelClass : {{segment.pricingDetailPerAdult.travelClass}}</span>
+                          </time>
                         </div>
                       </div>
-                      
-                    </div>
-                   
-                    </div>
-                    <button class="btn btn-primary" (click)="gotobooknow()">Book Now</button>
+                      <div  class="col fl-right" style="margin-top: -147px;">
+                          <small>To</small>
+                        <h3>{{segment.flightSegment.arrival.iataCode}}</h3>
+                        <div class="even-date">
+                          <i class="fa fa-calendar"></i>
+                          <time>
+                            <span> Terminal : {{segment.flightSegment.arrival.terminal}}</span>
+                            <span>{{segment.flightSegment.arrival.at}}</span>
+                            <span>carrierCode : {{segment.flightSegment.carrierCode}}</span>
+                            <span>Duration : {{segment.flightSegment.duration}}</span>
+                            <span>TravelClass : {{segment.pricingDetailPerAdult.travelClass}}</span>
+                          </time>
+                        </div>
+                      </div>
+                        <div class="even-info" style="float:right;">
+                          <i class="fa fa-map-marker"></i>
+                          <p> PricePerAdult : {{offer.pricePerAdult.total}}</p>
+                          <p> pricePerChild : {{offer.pricePerChild.total}}</p>
+                        </div>
+                      </section>
+                    </article>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div>
+            <button class="btn btn-primary" (click)="gotobooknow()">Book Now</button>
+            <br>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
