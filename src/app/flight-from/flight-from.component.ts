@@ -21,11 +21,12 @@ export class FlightFromComponent implements OnInit {
   email:any;
   passnumber:any;
   passdate:any;
-  details:any;
   Bookingflights: Observable<any[]>;
   Bookingflight: AngularFireList<any>;
   registerForm: FormGroup;
   submitted = false;
+  
+  
   constructor(private ApiServce:FlightService,db: AngularFireDatabase, private formBuilder: FormBuilder,private router:Router) { 
     this.Bookingflight = db.list('Bookingflight');
     this.Bookingflights =this.Bookingflight.snapshotChanges().pipe(map(changes=>changes.map(c=> ({key: c.payload.key, ...c.payload.val()}))));
@@ -43,18 +44,22 @@ export class FlightFromComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]]
   });
+  
   }
   get f() { return this.registerForm.controls; }
 
   Addtobook() {
+    let  Total= document.getElementById("Total").innerHTML;
+    let  PricePerAdult= document.getElementById("PricePerAdult").innerHTML;
     this.submitted = true;
-
+console.log(PricePerAdult);
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return  alert('plz');;
     }
-
+   
     alert('your booking is validate');
+    
     const bookingf={
       FirtName: this.firstname,
       LastName:this.lastname,
@@ -63,7 +68,8 @@ export class FlightFromComponent implements OnInit {
       Email:this.email,
       PassportNumber:this.passnumber,
       PassportExpirationDate:this.passdate,
-      details:this.details
+      Total:Total,
+      PricePerAdult:PricePerAdult
     };
     this.Bookingflight.push(bookingf)
     this.router.navigate(['/home']);

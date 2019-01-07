@@ -68,8 +68,8 @@
           </div>
           <div class="passport">
             <h2>Flight's Details</h2>
-            <p>Total price/duty free :{{myoffer.price.total}} </p>
-            <p> PricePerAdult : {{myoffer.pricePerAdult.total}}</p>
+            <p id="Total">Total price/duty free :{{myoffer.price.total}} </p>
+            <p id="PricePerAdult" > PricePerAdult : {{myoffer.pricePerAdult.total}}</p>
             <p> pricePerChild : {{myoffer.pricePerChild.total}}</p>
           
           <div *ngFor="let service of myoffer.services ">
