@@ -16,8 +16,8 @@
     padding-bottom: calc(10rem - 56px);
     background-position: center center;
     background-size: cover;
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/projet-niveau-2.appspot.com/o/flight.jpg?alt=media&token=05e24eb1-14c1-4361-8674-eec5f2fd5440');
     background-repeat: no-repeat;
+    background: burlywood;
   }
   .margin{
     margin-left: 67px;

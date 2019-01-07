@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class FlightFromComponent implements OnInit {
   offers: any;
+ myoffer:any;
   firstname:any;
   lastname:any;
   birthday:any;
@@ -20,6 +21,7 @@ export class FlightFromComponent implements OnInit {
   email:any;
   passnumber:any;
   passdate:any;
+  details:any;
   Bookingflights: Observable<any[]>;
   Bookingflight: AngularFireList<any>;
   registerForm: FormGroup;
@@ -33,6 +35,11 @@ export class FlightFromComponent implements OnInit {
   ngOnInit() {
     
     this.offers=  this.ApiServce.results;
+    this.myoffer = this.ApiServce.myOffer;
+    console.log("-----------------------------------------");
+    console.log(this.myoffer);
+    console.log("-----------------------------------------");
+
     this.registerForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]]
   });
@@ -55,7 +62,8 @@ export class FlightFromComponent implements OnInit {
       PhoneNumber:this.phonenumber,
       Email:this.email,
       PassportNumber:this.passnumber,
-      PassportExpirationDate:this.passdate
+      PassportExpirationDate:this.passdate,
+      details:this.details
     };
     this.Bookingflight.push(bookingf)
     this.router.navigate(['/home']);

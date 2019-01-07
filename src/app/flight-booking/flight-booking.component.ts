@@ -17,7 +17,8 @@ export class FlightBookingComponent implements OnInit {
     this.offers=  this.ApiServce.results;
   }
   
-  gotobooknow(){
+  gotobooknow(offer:any){
+    this.ApiServce.myOffer = offer;
     this.router.navigate(['/flightForm']);
   }
 }

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class FlightService {
   results: any;
   depart: any;
+  myOffer:any;
   arrive: any;
   dateAller: any;
   dateRetour: any;
@@ -24,7 +25,7 @@ export class FlightService {
   adulte: string;
   room: string;
   rate: string;
-  tken = 'WYEEvqZoiGPHyZXkjksioIAB9F2d';
+  tken = 'uXVOZHxDoukAmIHiBFGAqfgAjBN0';
   result: any;
   constructor(private http: HttpClient) { }
 
