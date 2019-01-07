@@ -24,7 +24,7 @@ export class FlightService {
   adulte: string;
   room: string;
   rate: string;
-  tken = 'WYEEvqZoiGPHyZXkjksioIAB9F2d';
+  tken = '6AxO3jehL0IThgEkEEXscW4t2GGA';
   result: any;
   constructor(private http: HttpClient) { }
 

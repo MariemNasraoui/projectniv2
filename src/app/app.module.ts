@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FlightComponent } from './flight/flight.component';
 import { HotelComponent } from './hotel/hotel.component';
+import { HotelbookingComponent } from './hotelbooking/hotelbooking.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HotelComponent } from './hotel/hotel.component';
     ResultatHotelComponent,
     ResultatCarComponent,
     FlightComponent,
-    HotelComponent
+    HotelComponent,
+    HotelbookingComponent
   ],
   imports: [
     BrowserModule,

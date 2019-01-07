@@ -59,5 +59,6 @@ export class FlightFromComponent implements OnInit {
     };
     this.Bookingflight.push(bookingf)
     this.router.navigate(['/home']);
-  }}
+  }
+}
 

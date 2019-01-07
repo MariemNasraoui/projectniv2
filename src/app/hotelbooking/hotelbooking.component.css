@@ -1,0 +1,42 @@
+.container  {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  
+  }
+  .container .row {
+    margin: 0 auto;
+  }
+  .bg{
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-position: center center;
+    background-size: cover;
+    background-image: url('https://webzine.one/wp-content/uploads/2018/07/hotel-booking-1500x1049.jpg');
+    background-repeat: no-repeat;
+  }
+  .margin{
+    margin-left: 67px;
+   
+  }
+  h1{
+    color: #fb8d62;
+  }
+  label{
+    color: #000000b3;
+  }
+  h2{
+    color: #3c3a3a;
+  }
+  input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 4px;
+    padding: 10px 79px;
+    margin-bottom: 15px;
+}
