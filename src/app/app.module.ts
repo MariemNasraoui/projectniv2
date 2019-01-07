@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,11 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
 import { FlightFromComponent } from './flight-from/flight-from.component';
 import { ResultatHotelComponent } from './resultat-hotel/resultat-hotel.component';
 import { ResultatCarComponent } from './resultat-car/resultat-car.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { FlightComponent } from './flight/flight.component';
+import { HotelComponent } from './hotel/hotel.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +24,18 @@ import { ResultatCarComponent } from './resultat-car/resultat-car.component';
     FlightBookingComponent,
     FlightFromComponent,
     ResultatHotelComponent,
-    ResultatCarComponent
+    ResultatCarComponent,
+    FlightComponent,
+    HotelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

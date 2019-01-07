@@ -10,12 +10,12 @@
           <div class="form-center-w3l">
             <label>First Name</label>
             <br>
-            <input type="text" class="top-up" name="name" placeholder="Name" required="">
+            <input  [(ngModel)]="firstname" type="text" class="top-up" name="name" placeholder="Name" required="">
           </div>
           <div class="form-right-w3ls ">
               <label>Last Name</label>
               <br>
-            <input type="text" class="top-up" name="last name" placeholder="Last Name" required="">
+            <input [(ngModel)]="lastname" type="text" class="top-up" name="last name" placeholder="Last Name" required="">
             <div class="clearfix"></div>
           </div>
   
@@ -25,34 +25,39 @@
             <div class="form-center-w3l">
                 <label>Birthday date</label>
                 <br>
-              <input type="text" class="top-up" name="name" placeholder="Birthday date" required="">
+              <input [(ngModel)]="birthday" type="text" class="top-up" name="name" placeholder="Birthday date" required="">
               <div class="clearfix"></div>
             </div>
           <div class="form-center-w3ls ">
               <label>Phone number</label>
               <br>
-            <input class="buttom" type="text" name="phone number" placeholder="Phone Number" required="">
+            <input [(ngModel)]="phonenumber" class="buttom" type="text" name="phone number" placeholder="Phone Number" required="">
             <div class="clearfix"></div>
           </div>
         </div>
-        <div class="main">
+        <form id="myform" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
             <div class="form-center-w3l">
                 <label>E-mail</label>
                 <br>
-              <input type="email" name="email" placeholder="Email" required="">
+              <input [(ngModel)]="email" formControlName="email" type="email" name="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email" >
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
             </div>
   
         </div>
       
-  
+      </form>
       <div class="passport">
         <h2>Traveler's Details</h2>
         <div class="main">
           <div class="form-center-w3l">
-            <input type="text" name="number" placeholder="Passport number" required="">
+            <input [(ngModel)]="passnumber" type="text" name="number" placeholder="Passport number" required="">
           </div>
           <div class="form-center-w3ls">
-            <input id="datepicker2" class="date-width" name="text" type="text" placeholder="Passport Expiration Date" required="">
+            <input [(ngModel)]="passdate" id="datepicker2" class="date-width" name="text" type="text" placeholder="Passport Expiration Date" required="">
             <div class="clearfix"></div>
           </div>
         </div>
@@ -61,7 +66,7 @@
           <h2>Flight's Details</h2>
       </div>
       <div >
-     <button class="btn">Book</button>
+     <button class="btn" (click)=" Addtobook()" >Book</button>
       </div>
     </div>
     </form>
