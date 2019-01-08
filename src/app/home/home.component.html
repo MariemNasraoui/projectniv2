@@ -127,8 +127,12 @@
                                             <div class="col-xxs-12 col-xs-12 mt">
                                                 <div class="input-field">
                                                     <label for="from">City:</label>
-                                                    <input type="text" class="form-control" id="from-place"
-                                                        placeholder="CHOOSE YOUR DESTINATION" [(ngModel)]="villeh">
+                                                    <select type="text" class="form-control" id="from-place" [(ngModel)]="villeh" placeholder="CHOOSE YOUR DESTINATION">
+                                                            <option value="LON">London</option>
+                                                            <option value="NYC">New York</option>
+                                                            <option value="PAR">Paris</option>
+                                                            <option value="MAD">Madrid</option>
+                                                        </select>
                                                 </div>
                                             </div>
                                             <div class="col-xxs-12 col-xs-6 mt alternate">
@@ -494,7 +498,7 @@
                         <span class="quote"><span><i class="icon-quotes-right"></i></span></span>
                         <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
                     </blockquote>
-                    <p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+                    <p class="author">Tommy Kol</p>
                 </div>
                 
             </div>
@@ -504,7 +508,7 @@
                         <span class="quote"><span><i class="icon-quotes-right"></i></span></span>
                         <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
                     </blockquote>
-                    <p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+                    <p class="author">John Doe</p>
                 </div>
                 
                 
@@ -515,7 +519,7 @@
                         <span class="quote"><span><i class="icon-quotes-right"></i></span></span>
                         <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
                     </blockquote>
-                    <p class="author">John Doe, Founder <a href="#">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+                    <p class="author">Alex Fransi</p>
                 </div>
                 
             </div>

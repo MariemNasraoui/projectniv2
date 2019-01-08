@@ -27,11 +27,6 @@ export class FlightService {
   rate: string;
   tken = 'G6wGLAEev3Nr1A9jbYVs7BggGceV';
   result: any;
-
-
-
-
-
   ville0:string;
   dat:Date;
   ville1:string;

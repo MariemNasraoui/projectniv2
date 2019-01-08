@@ -7,6 +7,7 @@ import { FlightFromComponent } from './flight-from/flight-from.component';
 import { FlightComponent } from './flight/flight.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { OptionComponent } from './option/option.component';
+import { HotelbookingComponent } from './hotelbooking/hotelbooking.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'flightForm', component: FlightFromComponent },
   { path: 'flighthome', component: FlightComponent },
   { path: 'hotelhome', component: HotelComponent },
-  {path:'MoreInfo', component:OptionComponent},
+  { path: 'hotelbooking', component: HotelbookingComponent },
+  {path:'MoreInfo', component:OptionComponent}
 ];
 
 @NgModule({

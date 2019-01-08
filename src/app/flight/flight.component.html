@@ -1,594 +1,486 @@
 <div id="fh5co-wrapper">
-  <div id="fh5co-page">
-      <header id="fh5co-header-section" class="sticky-banner">
-          <div class="container">
-              <div class="nav-header">
-                  <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-                  <h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
-                  <!-- START #fh5co-menu-wrap -->
-                  <nav id="fh5co-menu-wrap" role="navigation">
-                      <ul class="sf-menu" id="fh5co-primary-menu">
-                          <li  ><a routerLink="/home">Home</a></li>
-                          <li class="active"><a routerLink="/flighthome">Flights</a></li>
-                          <li ><a routerLink="/hotelhome">Hotel</a></li>
-                          <li><a href="car.html">Car</a></li>
-                          <li><a href="blog.html">Blog</a></li>
-                          <li><a href="contact.html">Contact</a></li>
-                      </ul>
-                  </nav>
-              </div>
-          </div>
-      </header>
-      <div class="fh5co-hero">
-        <div class="fh5co-overlay"></div>
-        <div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(http://placementinportugal.com/wp-content/uploads/2017/11/banner-home3.jpg);">
-            <div class="desc">
+    <div id="fh5co-page">
+        <header id="fh5co-header-section" class="sticky-banner">
+            <div class="container">
+                <div class="nav-header">
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+                    <h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
+                    <!-- START #fh5co-menu-wrap -->
+                    <nav id="fh5co-menu-wrap" role="navigation">
+                        <ul class="sf-menu" id="fh5co-primary-menu">
+                            <li><a routerLink="/home">Home</a></li>
+                            <li class="active"><a routerLink="/flighthome">Flights</a></li>
+                            <li><a routerLink="/hotelhome">Hotel</a></li>
+                            <li><a href="car.html">Car</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="fh5co-hero">
+            <div class="fh5co-overlay"></div>
+            <div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(http://placementinportugal.com/wp-content/uploads/2017/11/banner-home3.jpg);">
+                <div class="desc">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-5 col-md-5">
+                                <div class="tabulation ">
+
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Flights</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Hotels</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Packages</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="flights">
+                                            <div class="row">
+                                                <div class="col-xxs-12 col-xs-6 mt">
+                                                    <div class="input-field">
+                                                        <label for="from">From:</label>
+                                                        <select [(ngModel)]="depart" class="button" class="select">
+                                                            <option value="PAR">Paris</option>
+                                                            <option value="TUN">Tunis</option>
+                                                            <option value="NYC">New York</option>
+                                                            <option value="MAD">Madrid</option>
+                                                            <option value="ACA"> Mexique</option>
+                                                            <option value="ACX"> Chine</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt">
+                                                    <div class="input-field">
+                                                        <label for="from">To:</label>
+                                                        <select [(ngModel)]="arrive" class="select">
+                                                            <option value="PAR">Paris</option>
+                                                            <option value="TUN">Tunis</option>
+                                                            <option value="NYC">New York</option>
+                                                            <option value="MAD">Madrid</option>
+                                                            <option value="ACA"> Mexique</option>
+                                                            <option value="ACX"> Chine</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                    <div class="input-field">
+                                                        <label for="date-start">Check In:</label>
+                                                        <input type="date" class="form-control" [(ngModel)]="dateAller">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                    <div class="input-field">
+                                                        <label for="date-end">Check Out:</label>
+                                                        <input type="date" class="form-control" [(ngModel)]="dateRetour">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 mt">
+                                                    <section>
+                                                        <label for="class">Travel Class:</label>
+                                                        <select [(ngModel)]="travelClass" class="select">
+                                                            <option value="ECONOMY">Economy</option>
+                                                            <option value="PREMIUM_ECONOMY">Premium Economy</option>
+                                                            <option value="FIRST">First</option>
+                                                            <option value="BUSINESS">Business</option>
+                                                        </select>
+                                                    </section>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt">
+                                                    <section>
+                                                        <label for="class">Adult:</label>
+                                                        <select [(ngModel)]="adult" class="select">
+                                                            <option value="0" disabled selected>1</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                        </select>
+                                                    </section>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt">
+                                                    <section>
+                                                        <label for="class">Children:</label>
+                                                        <select [(ngModel)]="children" class="select">
+                                                            <option value="0" disabled selected>1</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                        </select>
+                                                    </section>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <button (click)="getCity()" class="btn btn-primary ">Search Flight</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div role="tabpanel" class="tab-pane " id="hotels">
+                                            <div class="row">
+                                                <div class="col-xxs-12 col-xs-12 mt">
+                                                    <div class="input-field">
+                                                        <label for="from">City:</label>
+                                                        <select type="text" class="form-control" id="from-place" [(ngModel)]="villeh" placeholder="CHOOSE YOUR DESTINATION">
+                                                                <option value="LON">London</option>
+                                                                <option value="NYC">New York</option>
+                                                                <option value="PAR">Paris</option>
+                                                                <option value="MAD">Madrid</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                    <div class="input-field">
+                                                        <label for="date-start">Check In:</label>
+                                                        <input type="date" class="form-control" id="date-start"
+                                                            placeholder="dd/mm/yyyy" [(ngModel)]="checkin">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                    <div class="input-field">
+                                                        <label for="date-end">Check Out:</label>
+                                                        <input type="date" class="form-control" id="date-end"
+                                                            placeholder="dd/mm/yyyy" [(ngModel)]="checkout">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                    <section>
+                                                        <label for="class">Rating:</label>
+
+                                                        <div class="input-group mb-3 size" style="color:#F78536">
+                                                            <select class="custom-select" id="inputGroupSelect02" style="padding: 5px 15px;background-color: #efe8e8"
+                                                                [(ngModel)]=" rate">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="4">5</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                    <section>
+                                                        <label for="class">Rooms:</label>
+
+                                                        <div class="input-group mb-3 size" style="color:#F78536">
+                                                            <select class="custom-select" id="inputGroupSelect02" style="padding: 5px 15px;background-color: #efe8e8"
+                                                                [(ngModel)]="room">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt">
+                                                    <section>
+                                                        <label for="class">Guest:</label>
+
+                                                        <div class="input-group mb-3 size" style="color:#F78536">
+                                                            <select class="custom-select " id="inputGroupSelect02"
+                                                                style="padding: 5px 15px;background-color: #efe8e8"
+                                                                [(ngModel)]="adulte">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+
+                                                <div class="col-xs-12">
+                                                    <input type="submit" class="btn btn-primary btn-block" value="Search Hotel"
+                                                        (click)=" getthehotel()">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div role="tabpanel" class="tab-pane" id="packages">
+                                            <div class="row">
+                                                <div class="col-xxs-12 col-xs-6 mt">
+                                                    <div class="input-field">
+                                                        <label for="from">City:</label>
+                                                        <input type="text" class="form-control" id="from-place"
+                                                            placeholder="Los Angeles, USA" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt">
+                                                    <div class="input-field">
+                                                        <label for="from">Destination:</label>
+                                                        <input type="text" class="form-control" id="to-place"
+                                                            placeholder="Tokyo, Japan" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                    <div class="input-field">
+                                                        <label for="date-start">Departs:</label>
+                                                        <input type="text" class="form-control" id="date-start"
+                                                            placeholder="mm/dd/yyyy" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                    <div class="input-field">
+                                                        <label for="date-end">Return:</label>
+                                                        <input type="text" class="form-control" id="date-end"
+                                                            placeholder="mm/dd/yyyy" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 mt">
+                                                    <section>
+                                                        <label for="class">Rooms:</label>
+                                                        <select class="cs-select cs-skin-border">
+                                                            <option value="" disabled selected>1</option>
+                                                            <option value="economy">1</option>
+                                                            <option value="first">2</option>
+                                                            <option value="business">3</option>
+                                                        </select>
+                                                    </section>
+                                                </div>
+                                                <div class="col-xxs-12 col-xs-6 mt">
+                                                    <section>
+                                                        <label for="class">Adult:</label>
+                                                        <select class="cs-select cs-skin-border">
+                                                            <option value="" disabled selected>1</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                        </select>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-tours" class="fh5co-section-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center heading-section">
+                        <h3>Book A Flight</h3>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                            there live the blind texts.</p>
+                    </div>
+                </div>
+                <div class="row row-bottom-padded-md">
+                    <div class="col-md-12">
+                        <h2 class="heading-title">Todays Flight Deal</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Better Deals, More Abilities</h4>
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Keep up with the news of your airline</h4>
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>In-Flight Experience</h4>
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-responsive" src="https://www.imore.com/sites/imore.com/files/styles/xlarge/public/field/image/2017/02/airplane-flight-sunset.jpg?itok=8iUtkHU-"
+                            alt="travel">
+                        <a href="#" class="flight-book">
+                            <div class="plane-name">
+                                <span class="p-flight">United States Airways</span>
+                            </div>
+                            <div class="desc">
+                                <div class="left">
+                                    <h4>HK-MNL</h4>
+                                    <span>Dec 20 - Dec29</span>
+                                </div>
+                                <div class="right">
+                                    <span class="price">
+                                        <i class="icon-arrow-down22"></i>
+                                        $1000
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="flight-book">
+                            <div class="plane-name">
+                                <span class="p-flight">Qatar Airways</span>
+                            </div>
+                            <div class="desc">
+                                <div class="left">
+                                    <h4>HK-MNL</h4>
+                                    <span>Dec 20 - Dec29</span>
+                                </div>
+                                <div class="right">
+                                    <span class="price">
+                                        <i class="icon-arrow-down22"></i>
+                                        $790
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="flight-book">
+                            <div class="plane-name">
+                                <span class="p-flight">Philippine Airline</span>
+                            </div>
+                            <div class="desc">
+                                <div class="left">
+                                    <h4>MNL-HK</h4>
+                                    <span>Dec 20 - Dec29</span>
+                                </div>
+                                <div class="right">
+                                    <span class="price">
+                                        <i class="icon-arrow-down22"></i>
+                                        $500
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="flight-book">
+                            <div class="plane-name">
+                                <span class="p-flight">China Airways</span>
+                            </div>
+                            <div class="desc">
+                                <div class="left">
+                                    <h4>HK-LAS</h4>
+                                    <span>Dec 20 - Dec29</span>
+                                </div>
+                                <div class="right">
+                                    <span class="price">
+                                        <i class="icon-arrow-down22"></i>
+                                        $900
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row row-bottom-padded-md">
+                    <div class="col-md-4 col-sm-6 fh5co-tours" data-animate-effect="fadeIn">
+                        <div href="#"><img style="height:315px" src="http://www.langex.com.ec/sites/default/files/2018-07/Espana%203.jpg" alt="Free HTML5 Website Template by FreeHTML5.co"
+                                class="img-responsive">
+                            <div class="desc">
+                                <span></span>
+                                <h3>Spain</h3> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 fh5co-tours" data-animate-effect="fadeIn">
+                        <div href="#"><img style="height:315px" src="https://images.unsplash.com/photo-1526653111374-539dc6d42575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Free HTML5 Website Template by FreeHTML5.co"
+                                class="img-responsive">
+                            <div class="desc">
+                                <span></span>
+                                <h3>Morocco</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 fh5co-tours" data-animate-effect="fadeIn">
+                        <div href="#"><img style="height:315px" src="http://blog.kuoni.es/wp-content/uploads/Brasil07.jpg" alt="Free HTML5 Website Template by FreeHTML5.co"
+                                class="img-responsive">
+                            <div class="desc">
+                                <span></span>
+                                <h3>Brazil</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div id="footer">
                 <div class="container">
+                    <div class="row row-bottom-padded-md">
+                        <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                            <h3>About Travel</h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the blind texts.</p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                            <h3>Top Flights Routes</h3>
+                            <ul>
+                                <li><a href="#">Manila flights</a></li>
+                                <li><a href="#">Dubai flights</a></li>
+                                <li><a href="#">Bangkok flights</a></li>
+                                <li><a href="#">Tokyo Flight</a></li>
+                                <li><a href="#">New York Flights</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                            <h3>Top Hotels</h3>
+                            <ul>
+                                <li><a href="#">Boracay Hotel</a></li>
+                                <li><a href="#">Dubai Hotel</a></li>
+                                <li><a href="#">Singapore Hotel</a></li>
+                                <li><a href="#">Manila Hotel</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                            <h3>Interest</h3>
+                            <ul>
+                                <li><a href="#">Beaches</a></li>
+                                <li><a href="#">Family Travel</a></li>
+                                <li><a href="#">Budget Travel</a></li>
+                                <li><a href="#">Food &amp; Drink</a></li>
+                                <li><a href="#">Honeymoon and Romance</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                            <h3>Best Places</h3>
+                            <ul>
+                                <li><a href="#">Boracay Beach</a></li>
+                                <li><a href="#">Dubai</a></li>
+                                <li><a href="#">Singapore</a></li>
+                                <li><a href="#">Hongkong</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                            <h3>Affordable</h3>
+                            <ul>
+                                <li><a href="#">Food &amp; Drink</a></li>
+                                <li><a href="#">Fare Flights</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="row">
-                        <div class="col-sm-5 col-md-5">
-                            <div class="tabulation ">
-
-                                <!-- Nav tabs -->
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active">
-                                        <a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Flights</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Hotels</a>
-                                    </li>
-                                </ul>
-
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="flights">
-                                        <div class="row">
-                                            <div class="col-xxs-12 col-xs-6 mt">
-                                                <div class="input-field">
-                                                    <label for="from">From:</label>
-                                                    <select [(ngModel)]="depart" class="button" class="select">
-                                                        <option value="PAR">Paris</option>
-                                                        <option value="TUN">Tunis</option>
-                                                        <option value="NYC">New York</option>
-                                                        <option value="MAD">Madrid</option>
-                                                        <option value="ACA"> Mexique</option>
-                                                        <option value="ACX"> Chine</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt">
-                                                <div class="input-field">
-                                                    <label for="from">To:</label>
-                                                    <select [(ngModel)]="arrive" class="select">
-                                                        <option value="PAR">Paris</option>
-                                                        <option value="TUN">Tunis</option>
-                                                        <option value="NYC">New York</option>
-                                                        <option value="MAD">Madrid</option>
-                                                        <option value="ACA"> Mexique</option>
-                                                        <option value="ACX"> Chine</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt alternate">
-                                                <div class="input-field">
-                                                    <label for="date-start">Check In:</label>
-                                                    <input type="date" class="form-control" [(ngModel)]="dateAller">
-                                                </div>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt alternate">
-                                                <div class="input-field">
-                                                    <label for="date-end">Check Out:</label>
-                                                    <input type="date" class="form-control" [(ngModel)]="dateRetour">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 mt">
-                                                <section>
-                                                    <label for="class">Travel Class:</label>
-                                                    <select [(ngModel)]="travelClass" class="select">
-                                                        <option value="ECONOMY">Economy</option>
-                                                        <option value="PREMIUM_ECONOMY">Premium Economy</option>
-                                                        <option value="FIRST">First</option>
-                                                        <option value="BUSINESS">Business</option>
-                                                    </select>
-                                                </section>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt">
-                                                <section>
-                                                    <label for="class">Adult:</label>
-                                                    <select [(ngModel)]="adult" class="select">
-                                                        <option value="0" disabled selected>1</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                    </select>
-                                                </section>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt">
-                                                <section>
-                                                    <label for="class">Children:</label>
-                                                    <select [(ngModel)]="children" class="select">
-                                                        <option value="0" disabled selected>1</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                    </select>
-                                                </section>
-                                            </div>
-                                            <div class="col-xs-12">
-                                                <button  (click)="getCity()" class="btn btn-primary ">Search Flight</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div role="tabpanel" class="tab-pane " id="hotels">
-                                        <div class="row">
-                                            <div class="col-xxs-12 col-xs-12 mt">
-                                                <div class="input-field">
-                                                    <label for="from">City:</label>
-                                                    <input type="text" class="form-control" id="from-place"
-                                                        placeholder="CHOOSE YOUR DESTINATION" [(ngModel)]="villeh">
-                                                </div>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt alternate">
-                                                <div class="input-field">
-                                                    <label for="date-start">Check In:</label>
-                                                    <input type="date" class="form-control" id="date-start"
-                                                        placeholder="dd/mm/yyyy" [(ngModel)]="checkin">
-                                                </div>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt alternate">
-                                                <div class="input-field">
-                                                    <label for="date-end">Check Out:</label>
-                                                    <input type="date" class="form-control" id="date-end"
-                                                        placeholder="dd/mm/yyyy" [(ngModel)]="checkout">
-                                                </div>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt alternate">
-                                                <section>
-                                                    <label for="class">Rating:</label>
-
-                                                    <div class="input-group mb-3 size" style="color:#F78536">
-                                                        <select class="custom-select" id="inputGroupSelect02" style="padding: 5px 15px;background-color: #efe8e8"
-                                                            [(ngModel)]=" rate">
-                                                            <option selected>Choose...</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="4">5</option>
-                                                        </select>
-
-                                                    </div>
-                                                </section>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt alternate">
-                                                <section>
-                                                    <label for="class">Rooms:</label>
-
-                                                    <div class="input-group mb-3 size" style="color:#F78536">
-                                                        <select class="custom-select" id="inputGroupSelect02" style="padding: 5px 15px;background-color: #efe8e8"
-                                                            [(ngModel)]="room">
-                                                            <option selected>Choose...</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                        </select>
-
-                                                    </div>
-                                                </section>
-                                            </div>
-                                            <div class="col-xxs-12 col-xs-6 mt">
-                                                <section>
-                                                    <label for="class">Guest:</label>
-
-                                                    <div class="input-group mb-3 size" style="color:#F78536">
-                                                        <select class="custom-select " id="inputGroupSelect02"
-                                                            style="padding: 5px 15px;background-color: #efe8e8"
-                                                            [(ngModel)]="adulte">
-                                                            <option selected>Choose...</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                        </select>
-
-                                                    </div>
-                                                </section>
-                                            </div>
-
-                                            <div class="col-xs-12">
-                                                <input type="submit" class="btn btn-primary btn-block" value="Search Hotel"
-                                                    (click)=" getthehotel()">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                        <div class="col-md-6 col-md-offset-3 text-center">
+                            <p class="fh5co-social-icons">
+                                <a href="#"><i class="icon-twitter2"></i></a>
+                                <a href="#"><i class="icon-facebook2"></i></a>
+                                <a href="#"><i class="icon-instagram"></i></a>
+                                <a href="#"><i class="icon-dribbble2"></i></a>
+                                <a href="#"><i class="icon-youtube"></i></a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div id="fh5co-tours" class="fh5co-section-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center heading-section ">
-                    <h3>Hot Tours</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 fh5co-tours " data-animate-effect="fadeIn">
-                    <div href="#"><img style="height:315px" src="http://s1.1zoom.me/b5050/282/400156-svetik_1600x1200.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-                        <div class="desc">
-                            <span></span>
-                            <h3>New York</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 fh5co-tours" data-animate-effect="fadeIn">
-        <div href="#"><img  style="height:315px" src="https://wallimpex.com/data/out/731/hd-beach-wallpapers-1920x1080-10816745.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-                        <div class="desc">
-                            <span></span>
-                            <h3>Philippines</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 fh5co-tours" data-animate-effect="fadeIn">
-                    <div href="#"><img style="height:315px" src="http://blog.cozmotravel.com/wp-content/uploads/2016/02/street-market.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-                        <div class="desc">
-                            <span></span>
-                            <h3>Hongkong</h3>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div id="fh5co-features">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-
-                    <div class="feature-left">
-                        <span class="icon">
-                            <i class="icon-hotairballoon"></i>
-                        </span>
-                        <div class="feature-copy">
-                            <h3 style="color:#F78536">Family Travel</h3>
-                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-md-4">
-                    <div class="feature-left">
-                        <span class="icon">
-                            <i class="icon-search"></i>
-                        </span>
-                        <div class="feature-copy">
-                            <h3 style="color:#F78536">Travel Plans</h3>
-                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-left">
-                        <span class="icon">
-                            <i class="icon-wallet"></i>
-                        </span>
-                        <div class="feature-copy">
-                            <h3 style="color:#F78536">Honeymoon</h3>
-                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-
-                    <div class="feature-left">
-                        <span class="icon">
-                            <i class="icon-wine"></i>
-                        </span>
-                        <div class="feature-copy">
-                            <h3 style="color:#F78536">Business Travel</h3>
-                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-md-4">
-                    <div class="feature-left">
-                        <span class="icon">
-                            <i class="icon-genius"></i>
-                        </span>
-                        <div class="feature-copy">
-                            <h3 style="color:#F78536">Solo Travel</h3>
-                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 ">
-                    <div class="feature-left">
-                        <span class="icon">
-                            <i class="icon-chat"></i>
-                        </span>
-                        <div class="feature-copy">
-                            <h3 style="color:#F78536">Explorer</h3>
-                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <div id="fh5co-destination">
-        <div class="tour-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul id="fh5co-destination-list" >
-                        <li class="one-forth text-center" style="background-image: url(https://www.nacel.fr/medias/_cache/villes/27/imagePrincipale/1920_1440/sejour-linguistique-los-angeles.jpg); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Los Angeles</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-forth text-center" style="background-image: url(https://cache.marriott.com/marriottassets/marriott/HKGWH/hkgwh-pool-exterior-5271-hor-wide.jpg?interpolation=progressive-bilinear&downsize=1440px:*); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Hongkong</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-forth text-center" style="background-image: url(https://onfoncedanslemur.files.wordpress.com/2018/09/rome-beauty.jpg); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Italy</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-forth text-center" style="background-image: url(https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1486500574/palawan-philippines-ROMISLAND0217.jpg?itok=9sP8cbMu); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Philippines</h2>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="one-forth text-center" style="background-image: url(https://www.reviewjournal.com/wp-content/uploads/2017/07/8945761_web1_tokyoweb.jpg); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Japan</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-half text-center">
-                            <div class="title-bg">
-                                <div class="case-studies-summary">
-                                    <h2>Most Popular Destinations</h2>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="one-forth text-center" style="background-image: url(https://vl-media.fr/wp-content/uploads/2017/10/decouvrir-la-region-de-paris-hd.jpg); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Paris</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-forth text-center" style="background-image: url(https://static.amazon.jobs/locations/39/images/Singapore_CareersPage_Desktop.jpg?1500475718); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Singapore</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-forth text-center" style="background-image: url(https://africandailyvoice.com/wp-content/uploads/2018/09/Antananarivo-Lake-Madagascar-678x381.jpg); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Madagascar</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-forth text-center" style="background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/180918120717-giza-sphinx-full-169.jpg); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Egypt</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-forth text-center" style="background-image: url(https://croaziere.co/wp-content/uploads/2017/04/Bali8.jpg); ">
-                            <a href="#">
-                                <div class="case-studies-summary">
-                                    <h2>Indonesia</h2>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>		
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="fh5co-blog-section" class="fh5co-section-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center heading-section">
-                    <h3>Recent From Blog</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row row-bottom-padded-md">
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="fh5co-blog ">
-                        <a href="#"><img class="img-responsive" src="images/place-1.jpg" alt=""></a>
-                        <div class="blog-text">
-                            <div class="prod-title">
-                                <h3><a href="#">30% Discount to Travel All Around the World</a></h3>
-                                <span class="posted_by">Sep. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="fh5co-blog">
-                        <a href="#"><img class="img-responsive" src="images/place-2.jpg" alt=""></a>
-                        <div class="blog-text">
-                            <div class="prod-title">
-                                <h3><a href="#">Planning for Vacation</a></h3>
-                                <span class="posted_by">Sep. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="clearfix visible-sm-block"></div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="fh5co-blog">
-                        <a href="#"><img class="img-responsive" src="images/place-3.jpg" alt=""></a>
-                        <div class="blog-text">
-                            <div class="prod-title">
-                                <h3><a href="#">Visit Tokyo Japan</a></h3>
-                                <span class="posted_by">Sep. 15th</span>
-                                <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="clearfix visible-md-block"></div>
-            </div>
-        </div>
-    </div>
-    <!-- fh5co-blog-section -->
-    <div id="fh5co-testimonial" style="background-image:url(images/img_bg_1.jpg);">
-    <div class="container">
-        <div class="row ">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                <h2>Happy Clients</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="box-testimony">
-                    <blockquote>
-                        <span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-                        <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-                    </blockquote>
-                    <p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-                </div>
-                
-            </div>
-            <div class="col-md-4">
-                <div class="box-testimony ">
-                    <blockquote>
-                        <span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-                        <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-                    </blockquote>
-                    <p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-                </div>
-                
-                
-            </div>
-            <div class="col-md-4">
-                <div class="box-testimony">
-                    <blockquote>
-                        <span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-                        <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-                    </blockquote>
-                    <p class="author">John Doe, Founder <a href="#">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-                </div>
-                
-            </div>
-        </div>
+        </footer>
     </div>
 </div>
-    <footer>
-        <div id="footer">
-            <div class="container">
-                <div class="row row-bottom-padded-md">
-                    <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                        <h3>About Travel</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                        <h3>Top Flights Routes</h3>
-                        <ul>
-                            <li><a href="#">Manila flights</a></li>
-                            <li><a href="#">Dubai flights</a></li>
-                            <li><a href="#">Bangkok flights</a></li>
-                            <li><a href="#">Tokyo Flight</a></li>
-                            <li><a href="#">New York Flights</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                        <h3>Top Hotels</h3>
-                        <ul>
-                            <li><a href="#">Boracay Hotel</a></li>
-                            <li><a href="#">Dubai Hotel</a></li>
-                            <li><a href="#">Singapore Hotel</a></li>
-                            <li><a href="#">Manila Hotel</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                        <h3>Interest</h3>
-                        <ul>
-                            <li><a href="#">Beaches</a></li>
-                            <li><a href="#">Family Travel</a></li>
-                            <li><a href="#">Budget Travel</a></li>
-                            <li><a href="#">Food &amp; Drink</a></li>
-                            <li><a href="#">Honeymoon and Romance</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                        <h3>Best Places</h3>
-                        <ul>
-                            <li><a href="#">Boracay Beach</a></li>
-                            <li><a href="#">Dubai</a></li>
-                            <li><a href="#">Singapore</a></li>
-                            <li><a href="#">Hongkong</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-                        <h3>Affordable</h3>
-                        <ul>
-                            <li><a href="#">Food &amp; Drink</a></li>
-                            <li><a href="#">Fare Flights</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <p class="fh5co-social-icons">
-                            <a href="#"><i class="icon-twitter2"></i></a>
-                            <a href="#"><i class="icon-facebook2"></i></a>
-                            <a href="#"><i class="icon-instagram"></i></a>
-                            <a href="#"><i class="icon-dribbble2"></i></a>
-                            <a href="#"><i class="icon-youtube"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    </div>
-  </div>
-
