@@ -25,7 +25,6 @@ export class FlightService {
   adulte: string;
   room: string;
   rate: string;
-  tken = 'ksP7kSGa05SWH1Gcobi8cd5Q6RaB';
   result: any;
   ville0:string;
   dat:Date;
@@ -34,7 +33,7 @@ export class FlightService {
   name:string;
   latitude:any;
   longitude:any;
-
+  tken = 'rIfU5ItSwN0eUSkxogX5G1gGQhI0';
 
 
 
