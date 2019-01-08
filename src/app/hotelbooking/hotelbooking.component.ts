@@ -40,10 +40,10 @@ export class HotelbookingComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
-      return  alert('plz');
+      return  alert('Please verify your Email');
     }
 
-    alert('your booking is validate');
+    alert('your booking is confirmed');
     const bookingh={
       FirtNam: this.firstnam,
       LastNam:this.lastnam,

@@ -71,7 +71,7 @@ console.log(PricePerAdult);
       return  alert('Please verify your Email');;
     }
    
-    alert('your booking is validate');
+    alert('your booking is confirmed');
     
     const bookingf={
       FirtName: this.firstname,
