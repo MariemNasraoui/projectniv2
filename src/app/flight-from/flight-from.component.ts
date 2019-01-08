@@ -20,7 +20,6 @@ export class FlightFromComponent implements OnInit {
   phonenumber:any;
   email:any;
   passnumber:any;
-  passdate:any;
   Bookingflights: Observable<any[]>;
   Bookingflight: AngularFireList<any>;
   registerForm: FormGroup;
@@ -49,13 +48,27 @@ export class FlightFromComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   Addtobook() {
-    let  Total= document.getElementById("Total").innerHTML;
+    let  price= document.getElementById("price").innerHTML;
+    let  From= document.getElementById("From").innerHTML;
+    let  iataCodeD= document.getElementById("iataCodeD").innerHTML;
+    let  departure= document.getElementById("departure").innerHTML;
+    let  carrierCodeD= document.getElementById("carrierCodeD").innerHTML;
+    let  DurationD= document.getElementById("DurationD").innerHTML;
+    let  TravelClassD= document.getElementById("TravelClassD").innerHTML;
+    let  To= document.getElementById("To").innerHTML;
+    let  iataCode= document.getElementById("PricePerAdult").innerHTML;
+    let  arrival= document.getElementById("arrival").innerHTML;
+    let  carrierCode= document.getElementById("carrierCode").innerHTML;
+    let  duration= document.getElementById("duration").innerHTML;
+    let  travelClass= document.getElementById("travelClass").innerHTML;
     let  PricePerAdult= document.getElementById("PricePerAdult").innerHTML;
+    let  pricePerChild= document.getElementById("pricePerChild").innerHTML;
+
     this.submitted = true;
 console.log(PricePerAdult);
     // stop here if form is invalid
     if (this.registerForm.invalid) {
-      return  alert('plz');;
+      return  alert('Please verify your Email');;
     }
    
     alert('your booking is validate');
@@ -67,11 +80,27 @@ console.log(PricePerAdult);
       PhoneNumber:this.phonenumber,
       Email:this.email,
       PassportNumber:this.passnumber,
-      PassportExpirationDate:this.passdate,
-      Total:Total,
-      PricePerAdult:PricePerAdult
+      price:price,
+      From:From,
+      iataCodeD:iataCodeD,
+      departure:departure,
+      carrierCodeD:carrierCodeD,
+      DurationD:DurationD,
+      TravelClassD:TravelClassD,
+      To:To,
+      arrival:arrival,
+      carrierCode:carrierCode,
+      iataCode:iataCode,
+      duration:duration,
+      travelClass:travelClass,
+      PricePerAdult:PricePerAdult,
+      pricePerChild:pricePerChild
     };
     this.Bookingflight.push(bookingf)
     this.router.navigate(['/home']);
-  }}
+  }
+  cancel(){
+    this.router.navigate(['/home']);
+  }
+}
 
