@@ -25,7 +25,7 @@ export class FlightService {
   adulte: string;
   room: string;
   rate: string;
-  tken = 'pdwTRfTWq9Wy8Aqxbp9F0bGCxrnc';
+  tken = 'sMKMVxgApGJAK54tv38ilcicb4C8';
   result: any;
   ville0:string;
   dat:Date;
