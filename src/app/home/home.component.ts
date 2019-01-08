@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightService } from '../flight.service';
 import { Router } from '@angular/router';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-home',
@@ -29,9 +30,12 @@ export class HomeComponent implements OnInit {
   room: string;
   rate: string;
   result: any;
+  token:any;
   constructor( private ApiServce:FlightService, private apiService:FlightService , private router:Router) { }
 
   ngOnInit() {
+    
+    
   }
   getCity(){
     this.ApiServce.getApi(this.depart, this.arrive ,this.dateAller,this.dateRetour,this.travelClass,this.adult,this.children).subscribe( async file =>{

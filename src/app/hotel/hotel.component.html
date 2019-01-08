@@ -129,8 +129,12 @@
                                             <div class="col-xxs-12 col-xs-12 mt">
                                                 <div class="input-field">
                                                     <label for="from">City:</label>
-                                                    <input type="text" class="form-control" id="from-place"
-                                                        placeholder="CHOOSE YOUR DESTINATION" [(ngModel)]="villeh">
+                                                    <select type="text" class="form-control" id="from-place" [(ngModel)]="villeh" placeholder="CHOOSE YOUR DESTINATION">
+                                                            <option value="LON">London</option>
+                                                            <option value="NYC">New York</option>
+                                                            <option value="PAR">Paris</option>
+                                                            <option value="MAD">Madrid</option>
+                                                        </select>
                                                 </div>
                                             </div>
                                             <div class="col-xxs-12 col-xs-6 mt alternate">
