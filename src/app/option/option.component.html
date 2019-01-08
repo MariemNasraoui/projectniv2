@@ -1,296 +1,293 @@
+<div id="fh5co-wrapper">
+	<div id="fh5co-page">
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active"><a routerLink="/home">Home</a></li>
+							<li><a routerLink="/flighthome">Flights</a></li>
+							<li><a routerLink="/hotelhome">Hotel</a></li>
+							<li><a routerLink="/MoreInfo">More Info</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(http://placementinportugal.com/wp-content/uploads/2017/11/banner-home3.jpg);">
+				<div class="desc">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-4 col-md-4">
+								<!-- <a href="index.html" id="main-logo">Travel</a> -->
+								<div class="tabulation">
 
-
-			<div id="fh5co-wrapper">
-				<div id="fh5co-page">
-			  
-					<header id="fh5co-header-section" class="sticky-banner">
-						<div class="container">
-							<div class="nav-header">
-								<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-								<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
-								<!-- START #fh5co-menu-wrap -->
-								<nav id="fh5co-menu-wrap" role="navigation">
-									<ul class="sf-menu" id="fh5co-primary-menu">
-										<li class="active" ><a routerLink="/home">Home</a></li>
-										<li><a routerLink="/flighthome">Flights</a></li>
-										<li ><a routerLink="/hotelhome">Hotel</a></li>
-										<li><a routerLink="/MoreInfo">More Info</a></li>
-										<li><a href="blog.html">Blog</a></li>
-										<li><a href="contact.html">Contact</a></li>
+									<!-- Nav tabs -->
+									<ul class="nav nav-tabs" role="tablist">
+										<li role="presentation" class="active">
+											<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab"> Flight</a>
+										</li>
+										<li role="presentation">
+											<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab"> Period</a>
+										</li>
+										<li role="presentation">
+											<a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Airport </a>
+										</li>
 									</ul>
-								</nav>
+
+									<!-- Tab panes -->
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="flights">
+											<div class="row">
+												<div class="col-xxs-12 col-xs-6 mt">
+													<div class="input-field">
+														<label for="from">DESTINATION</label>
+														<select type="text" class="form-control" id="from-place" [(ngModel)]="city" placeholder="City">
+															<option value="PAR">Paris</option>
+															<option value="LON">London</option>
+															<option value="BER">Berlin</option>
+															<option value="CHI">Chicago</option>
+															<option value="NYC">NEW YORK</option>
+															<option value="MIL">Milan</option>
+															<option value="MOW">Moscow</option>
+															<option value="DXB">Dubai </option>
+															<option value="TYO">Tokyo</option>
+															<option value="BJS">NBeijing </option>
+															<option value="KUL">Kuala Lumpur </option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-xxs-12 col-xs-6 mt alternate">
+													<div class="input-field">
+														<label for="date-start">DATE</label>
+														<input type="text" class="form-control" id="date-start" [(ngModel)]="date" placeholder="YEAR-MONTH" />
+													</div>
+												</div>
+
+												<div class="col-xs-12">
+													<input type="submit" (click)="setValue()" class="btn btn-primary btn-block" value="Search">
+												</div>
+											</div>
+										</div>
+
+
+
+										<div role="tabpanel" class="tab-pane" id="hotels">
+											<div class="row">
+												<div class="col-xxs-12 col-xs-12 mt">
+													<div class="input-field">
+														<label for="from">DESTINATION</label>
+														<select type="text" class="form-control" id="from-place" [(ngModel)]="city1" placeholder="city">
+
+															<option value="PAR">Paris</option>
+															<option value="LON">London</option>
+															<option value="BER">Berlin</option>
+															<option value="CHI">Chicago</option>
+															<option value="NYC">NEW YORK</option>
+															<option value="MIL">Milan</option>
+															<option value="MOW">Moscow</option>
+															<option value="DXB">Dubai </option>
+															<option value="TYO">Tokyo</option>
+															<option value="BJS">NBeijing </option>
+															<option value="KUL">Kuala Lumpur </option>
+														</select>
+													</div>
+												</div>
+												<div class="col-xxs-12 col-xs-6 mt alternate">
+													<div class="input-field">
+														<label for="date-start">DATE</label>
+														<input type="text" class="form-control" id="date-start" [(ngModel)]="date1" placeholder="YEAR" />
+													</div>
+												</div>
+
+
+
+
+												<div class="col-xs-12">
+													<input type="submit" (click)="setValue1()" class="btn btn-primary btn-block" value="Search">
+												</div>
+											</div>
+										</div>
+
+
+
+										<div role="tabpanel" class="tab-pane" id="packages">
+											<div class="row">
+												<div class="col-xxs-12 col-xs-6 mt">
+													<div class="input-field">
+														<label for="from">City:</label>
+														<select type="text" class="form-control" id="from-place" [(ngModel)]="ville2" placeholder="City">
+
+
+															<option value="LON">London</option>
+															<option value="WAS">Washington</option>
+															<option value="NYC">New York</option>
+															<option value="MIA">Miami</option>
+															<option value="ORY">Orly</option>
+															<option value="TXL">Berlin</option>
+															<option value="BOM">Bombay</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-xs-12">
+													<input type="submit" (click)="setValue2()" class="btn btn-primary btn-block" value="submit">
+												</div>
+
+
+
+												<div class="col-xs-12">
+													<input type="submit" (click)="setValue3()" class="btn btn-primary btn-block" style="margin-top:10%" value="Search ">
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
 							</div>
-						</div>
-					</header>
-					<div class="fh5co-hero">
-					  <div class="fh5co-overlay"></div>
-					  <div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(http://placementinportugal.com/wp-content/uploads/2017/11/banner-home3.jpg);">
-						  <div class="desc">
-							  <div class="container">
-							<div class="row">
-								<div class="col-sm-4 col-md-4">
+
+
+							<div *ngIf="showResult">
+
+								<div class="col-sm-8 col-md-8">
+
 									<!-- <a href="index.html" id="main-logo">Travel</a> -->
 									<div class="tabulation">
 
 										<!-- Nav tabs -->
 										<ul class="nav nav-tabs" role="tablist">
 											<li role="presentation" class="active">
-												<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab"> Flight</a>
+												<a href="#MBD" aria-controls="flights" role="tab" data-toggle="tab">Flights-MBD</a>
 											</li>
 											<li role="presentation">
-												<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab"> Period</a>
+												<a href="#BTP" aria-controls="hotels" role="tab" data-toggle="tab">Flights-BTP</a>
 											</li>
 											<li role="presentation">
-												<a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Airport </a>
+												<a href="#ANR" aria-controls="packages" role="tab" data-toggle="tab">Airport-NR</a>
 											</li>
 										</ul>
 
 										<!-- Tab panes -->
 										<div class="tab-content">
-											<div role="tabpanel" class="tab-pane active" id="flights">
+											<div role="tabpanel" class="tab-pane active" id="MBD">
 												<div class="row">
-													<div class="col-xxs-12 col-xs-6 mt">
+													<div class="col-xxs-12 col-xs-4 mt">
 														<div class="input-field">
-															<label for="from">DESTINATION</label>
-															<select type="text" class="form-control" id="from-place" [(ngModel)]="city" placeholder="City">
-																<option value="PAR">Paris</option>
-																<option value="LON">London</option>
-																<option value="BER">Berlin</option>
-																<option value="CHI">Chicago</option>
-																<option value="NYC">NEW YORK</option>
-																<option value="MIL">Milan</option>
-																<option value="MOW">Moscow</option>
-																<option value="DXB">Dubai </option>
-																<option value="TYO">Tokyo</option>
-																<option value="BJS">NBeijing </option>
-																<option value="KUL">Kuala Lumpur </option>
-															</select>
+															<label for="from">Destination</label>
+															<div *ngFor="let index of resFMBD ">
+																<input type="text" class="form-control" id="MBD1" value="{{index.destination}}" />
+															</div>
+														</div>
+													</div>
+													<div class="col-xxs-12 col-xs-4 mt">
+														<div class="input-field">
+															<label for="from">Flights-score</label>
+															<div *ngFor="let index of resFMBD ">
+																<input type="text" class="form-control" id="MBD2" value="{{index.analytics.flights.score}}" />
+															</div>
+														</div>
+													</div>
+													<div class="col-xxs-12 col-xs-4 mt alternate">
+														<div class="input-field">
+															<label for="date-start">Travelers-score</label>
+															<div *ngFor="let index of resFMBD ">
+																<input type="text" class="form-control" id="MBD3" value="{{index.analytics.travelers.score}}" />
+															</div>
 														</div>
 													</div>
 
-													<div class="col-xxs-12 col-xs-6 mt alternate">
-														<div class="input-field">
-															<label for="date-start">DATE</label>
-															<input type="text" class="form-control" id="date-start" [(ngModel)]="date" placeholder="YEAR-MONTH" />
-														</div>
-													</div>
-
-													<div class="col-xs-12">
-														<input type="submit" (click)="setValue()" class="btn btn-primary btn-block" value="Search">
-													</div>
 												</div>
 											</div>
 
-
-
-											<div role="tabpanel" class="tab-pane" id="hotels">
+											<div role="tabpanel" class="tab-pane" id="BTP">
 												<div class="row">
-													<div class="col-xxs-12 col-xs-12 mt">
+													<div class="col-xxs-12 col-xs-4 mt alternate">
 														<div class="input-field">
-															<label for="from">DESTINATION</label>
-															<select type="text" class="form-control" id="from-place" [(ngModel)]="city1" placeholder="city">
-
-																<option value="PAR">Paris</option>
-																<option value="LON">London</option>
-																<option value="BER">Berlin</option>
-																<option value="CHI">Chicago</option>
-																<option value="NYC">NEW YORK</option>
-																<option value="MIL">Milan</option>
-																<option value="MOW">Moscow</option>
-																<option value="DXB">Dubai </option>
-																<option value="TYO">Tokyo</option>
-																<option value="BJS">NBeijing </option>
-																<option value="KUL">Kuala Lumpur </option>
-															</select>
+															<label for="from">Period</label>
+															<div *ngFor="let index of resFBTP ">
+																<input type="text" class="form-control" id="BTP1" value="{{index.period}}" />
+															</div>
 														</div>
 													</div>
-													<div class="col-xxs-12 col-xs-6 mt alternate">
+													<div class="col-xxs-12 col-xs-4 mt alternate">
 														<div class="input-field">
-															<label for="date-start">DATE</label>
-															<input type="text" class="form-control" id="date-start" [(ngModel)]="date1" placeholder="YEAR" />
+															<label for="date-start">Type</label>
+															<div *ngFor="let index of resFBTP ">
+																<input type="text" class="form-control" id="BTP2" value="{{index.type}}" />
+															</div>
+														</div>
+													</div>
+													<div class="col-xxs-12 col-xs-4 mt alternate">
+														<div class="input-field">
+															<label for="date-end">Travelers-score</label>
+															<div *ngFor="let index of resFBTP ">
+																<input type="text" class="form-control" id="BTP3" value="{{index.analytics.travelers.score}}" />
+															</div>
 														</div>
 													</div>
 
-
-
-
-													<div class="col-xs-12">
-														<input type="submit" (click)="setValue1()" class="btn btn-primary btn-block" value="Search">
-													</div>
 												</div>
 											</div>
 
-
-
-											<div role="tabpanel" class="tab-pane" id="packages">
+											<div role="tabpanel" class="tab-pane" id="ANR">
 												<div class="row">
-													<div class="col-xxs-12 col-xs-6 mt">
+													<div class="col-xxs-12 col-xs-4 mt">
 														<div class="input-field">
-															<label for="from">City:</label>
-															<select type="text" class="form-control" id="from-place" [(ngModel)]="ville2" placeholder="City">
-
-
-																<option value="LON">London</option>
-																<option value="WAS">Washington</option>
-																<option value="NYC">New York</option>
-																<option value="MIA">Miami</option>
-																<option value="ORY">Orly</option>
-																<option value="TXL">Berlin</option>
-																<option value="BOM">Bombay</option>
-															</select>
+															<label for="from">Address-city</label>
+															<div *ngFor="let index of resANR ">
+																<input type="text" class="form-control" id="ANR1" value="{{index.address.cityName}}" />
+															</div>
+														</div>
+													</div>
+													<div class="col-xxs-12 col-xs-4 mt">
+														<div class="input-field">
+															<label for="from">Detail</label>
+															<div *ngFor="let index of resANR ">
+																<input type="text" class="form-control" id="ANR2" value="{{index.detailedName}}" />
+															</div>
+														</div>
+													</div>
+													<div class="col-xxs-12 col-xs-4 mt alternate">
+														<div class="input-field">
+															<label for="date-start">Distance</label>
+															<div *ngFor="let index of resANR ">
+																<input type="text" class="form-control" id="ANR3" value="{{index.distance.value}}{{index.distance.unit}}" />
+															</div>
 														</div>
 													</div>
 
-													<div class="col-xs-12">
-														<input type="submit" (click)="setValue2()" class="btn btn-primary btn-block" value="submit">
-													</div>
 
-
-
-													<div class="col-xs-12">
-														<input type="submit" (click)="setValue3()" class="btn btn-primary btn-block" style="margin-top:10%" value="Search ">
-													</div>
 												</div>
 											</div>
 										</div>
 
 									</div>
+
 								</div>
-								
-
-								<div *ngIf="showResult">
-
-									<div class="col-sm-8 col-md-8">
-
-										<!-- <a href="index.html" id="main-logo">Travel</a> -->
-										<div class="tabulation">
-
-											<!-- Nav tabs -->
-											<ul class="nav nav-tabs" role="tablist">
-												<li role="presentation" class="active">
-													<a href="#MBD" aria-controls="flights" role="tab" data-toggle="tab">Flights-MBD</a>
-												</li>
-												<li role="presentation">
-													<a href="#BTP" aria-controls="hotels" role="tab" data-toggle="tab">Flights-BTP</a>
-												</li>
-												<li role="presentation">
-													<a href="#ANR" aria-controls="packages" role="tab" data-toggle="tab">Airport-NR</a>
-												</li>
-											</ul>
-
-											<!-- Tab panes -->
-											<div class="tab-content">
-												<div role="tabpanel" class="tab-pane active" id="MBD">
-													<div class="row">
-														<div class="col-xxs-12 col-xs-4 mt">
-															<div class="input-field">
-																<label for="from">Destination</label>
-																<div *ngFor="let index of resFMBD ">
-																	<input type="text" class="form-control" id="MBD1" value="{{index.destination}}" />
-																</div>
-															</div>
-														</div>
-														<div class="col-xxs-12 col-xs-4 mt">
-															<div class="input-field">
-																<label for="from">Flights-score</label>
-																<div *ngFor="let index of resFMBD ">
-																	<input type="text" class="form-control" id="MBD2" value="{{index.analytics.flights.score}}" />
-																</div>
-															</div>
-														</div>
-														<div class="col-xxs-12 col-xs-4 mt alternate">
-															<div class="input-field">
-																<label for="date-start">Travelers-score</label>
-																<div *ngFor="let index of resFMBD ">
-																	<input type="text" class="form-control" id="MBD3" value="{{index.analytics.travelers.score}}" />
-																</div>
-															</div>
-														</div>
-
-													</div>
-												</div>
-
-												<div role="tabpanel" class="tab-pane" id="BTP">
-													<div class="row">
-														<div class="col-xxs-12 col-xs-4 mt alternate">
-															<div class="input-field">
-																<label for="from">Period</label>
-																<div *ngFor="let index of resFBTP ">
-																	<input type="text" class="form-control" id="BTP1" value="{{index.period}}" />
-																</div>
-															</div>
-														</div>
-														<div class="col-xxs-12 col-xs-4 mt alternate">
-															<div class="input-field">
-																<label for="date-start">Type</label>
-																<div *ngFor="let index of resFBTP ">
-																	<input type="text" class="form-control" id="BTP2" value="{{index.type}}" />
-																</div>
-															</div>
-														</div>
-														<div class="col-xxs-12 col-xs-4 mt alternate">
-															<div class="input-field">
-																<label for="date-end">Travelers-score</label>
-																<div *ngFor="let index of resFBTP ">
-																	<input type="text" class="form-control" id="BTP3" value="{{index.analytics.travelers.score}}" />
-																</div>
-															</div>
-														</div>
-
-													</div>
-												</div>
-
-												<div role="tabpanel" class="tab-pane" id="ANR">
-													<div class="row">
-														<div class="col-xxs-12 col-xs-4 mt">
-															<div class="input-field">
-																<label for="from">Address-city</label>
-																<div *ngFor="let index of resANR ">
-																	<input type="text" class="form-control" id="ANR1" value="{{index.address.cityName}}" />
-																</div>
-															</div>
-														</div>
-														<div class="col-xxs-12 col-xs-4 mt">
-															<div class="input-field">
-																<label for="from">Detail</label>
-																<div *ngFor="let index of resANR ">
-																	<input type="text" class="form-control" id="ANR2" value="{{index.detailedName}}" />
-																</div>
-															</div>
-														</div>
-														<div class="col-xxs-12 col-xs-4 mt alternate">
-															<div class="input-field">
-																<label for="date-start">Distance</label>
-																<div *ngFor="let index of resANR ">
-																	<input type="text" class="form-control" id="ANR3" value="{{index.distance.value}}{{index.distance.unit}}" />
-																</div>
-															</div>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-
-
 							</div>
+
+
+
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="fh5co-tours" class="fh5co-section-gray">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 text-center heading-section ">
-							<h3>Hot Tours</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
+		</div>
+		<div id="fh5co-tours" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section ">
+						<h3>Hot Tours</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
+							texts.</p>
 					</div>
 					<div class="row">
 						<div class="col-md-4 col-sm-6 fh5co-tours " data-animate-effect="fadeIn">
@@ -375,42 +372,65 @@
 								</ul>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 text-center">
-								<p class="fh5co-social-icons">
-									<a href="#"><i class="icon-twitter2"></i></a>
-									<a href="#"><i class="icon-facebook2"></i></a>
-									<a href="#"><i class="icon-instagram"></i></a>
-									<a href="#"><i class="icon-dribbble2"></i></a>
-									<a href="#"><i class="icon-youtube"></i></a>
-								</p>
-							</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Top Flights Routes</h3>
+							<ul>
+								<li><a href="#">Manila flights</a></li>
+								<li><a href="#">Dubai flights</a></li>
+								<li><a href="#">Bangkok flights</a></li>
+								<li><a href="#">Tokyo Flight</a></li>
+								<li><a href="#">New York Flights</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Top Hotels</h3>
+							<ul>
+								<li><a href="#">Boracay Hotel</a></li>
+								<li><a href="#">Dubai Hotel</a></li>
+								<li><a href="#">Singapore Hotel</a></li>
+								<li><a href="#">Manila Hotel</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Interest</h3>
+							<ul>
+								<li><a href="#">Beaches</a></li>
+								<li><a href="#">Family Travel</a></li>
+								<li><a href="#">Budget Travel</a></li>
+								<li><a href="#">Food &amp; Drink</a></li>
+								<li><a href="#">Honeymoon and Romance</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Best Places</h3>
+							<ul>
+								<li><a href="#">Boracay Beach</a></li>
+								<li><a href="#">Dubai</a></li>
+								<li><a href="#">Singapore</a></li>
+								<li><a href="#">Hongkong</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+							<h3>Affordable</h3>
+							<ul>
+								<li><a href="#">Food &amp; Drink</a></li>
+								<li><a href="#">Fare Flights</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p class="fh5co-social-icons">
+								<a href="#"><i class="icon-twitter2"></i></a>
+								<a href="#"><i class="icon-facebook2"></i></a>
+								<a href="#"><i class="icon-instagram"></i></a>
+								<a href="#"><i class="icon-dribbble2"></i></a>
+								<a href="#"><i class="icon-youtube"></i></a>
+							</p>
 						</div>
 					</div>
 				</div>
-			</footer>
 			</div>
-		  </div>
-		
-						
-				
-			
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		</footer>
+	</div>
+</div>

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class FlightService {
   results: any;
   depart: any;
+  myOffer:any;
   arrive: any;
   dateAller: any;
   dateRetour: any;
